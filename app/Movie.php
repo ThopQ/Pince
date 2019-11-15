@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
+    //Fillable attributes stored in array
+    protected $fillable = ['name', 'description', 'year', 'fsk', 'director_id'];
+
     public function director()
     {
         return $this->belongsTo('App\Director');
