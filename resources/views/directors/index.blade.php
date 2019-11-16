@@ -11,7 +11,7 @@
         <h1 class="font-weight-bold">Alle Regisseure</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/movies/create" role="button">NEU</a>
+        <a class="btn btn-primary" href="/directors/create" role="button">NEU</a>
     </div>
 </div>
 
@@ -20,4 +20,5 @@
         <h5 class="card-title">Steven Spielberg</h5>
     </div>
 </div>
+
 @endsection

@@ -11,7 +11,7 @@
         <h1 class="font-weight-bold">Alle Genres</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/movies/create" role="button">NEU</a>
+        <a class="btn btn-primary" href="/genres/create" role="button">NEU</a>
     </div>
 </div>
 
