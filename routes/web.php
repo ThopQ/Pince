@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::resources([
     'movies' => 'MovieController',
+    'directors' => 'DirectorController',
     'actors' => 'ActorController',
-    'directors' => 'DirectorController'
+    'genres' => 'GenreController'
 ]);
