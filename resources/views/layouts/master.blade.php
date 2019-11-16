@@ -26,7 +26,7 @@
                     <a href="/movies" class="list-group-item list-group-item-action active">Filme</a>
                     <a href="/directors" class="list-group-item list-group-item-action">Regisseure</a>
                     <a href="/actors" class="list-group-item list-group-item-action">Schauspieler</a>
-                    <a href="/actors" class="list-group-item list-group-item-action">Genres</a>
+                    <a href="/genres" class="list-group-item list-group-item-action">Genres</a>
                 </div>
             </div>
 
