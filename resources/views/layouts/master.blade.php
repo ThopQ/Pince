@@ -24,13 +24,13 @@
             <div class="col-lg-2">
                 <div class="list-group mb-5 sticky-top">
                     <a href="/movies"
-                        class="list-group-item list-group-item-action {{ Request::is("movies") ? 'active' : '' }}">Filme</a>
+                        class="list-group-item list-group-item-action {{ Request::is('movies') ? 'active' : '' }}">Filme</a>
                     <a href="/directors"
-                        class="list-group-item list-group-item-action {{ Request::is("directors") ? 'active' : '' }}">Regisseure</a>
+                        class="list-group-item list-group-item-action {{ Request::is('directors') ? 'active' : '' }}">Regisseure</a>
                     <a href="/actors"
-                        class="list-group-item list-group-item-action {{ Request::is("actors") ? 'active' : '' }}">Schauspieler</a>
+                        class="list-group-item list-group-item-action {{ Request::is('actors') ? 'active' : '' }}">Schauspieler</a>
                     <a href="/genres"
-                        class="list-group-item list-group-item-action {{ Request::is("genres") ? 'active' : '' }}">Genres</a>
+                        class="list-group-item list-group-item-action {{ Request::is('genres') ? 'active' : '' }}">Genres</a>
                 </div>
             </div>
 
