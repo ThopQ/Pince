@@ -2,16 +2,16 @@
 @extends('layouts.master')
 
 {{-- Title name --}}
-@section('title', 'Regisseure')
+@section('title', 'Directors')
 
 @section('content')
 
 <div class="row">
     <div class="col">
-        <h1 class="font-weight-bold">Alle Regisseure</h1>
+        <h1 class="font-weight-bold">All directors</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/directors/create" role="button">Neu</a>
+        <a class="btn btn-primary" href="/directors/create" role="button">Create</a>
     </div>
 </div>
 

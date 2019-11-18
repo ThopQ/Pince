@@ -8,10 +8,10 @@
 
 <div class="row">
     <div class="col">
-        <h1 class="font-weight-bold">Alle Genres</h1>
+        <h1 class="font-weight-bold">All genres</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/genres/create" role="button">Neu</a>
+        <a class="btn btn-primary" href="/genres/create" role="button">Create</a>
     </div>
 </div>
 
