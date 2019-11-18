@@ -14,7 +14,9 @@ class GenreController extends Controller
      */
     public function index()
     {
-        return view('genres.index');
+        $genres = Genre::all();
+
+        return view('genres.index', compact('genres'));
     }
 
     /**
@@ -35,7 +37,17 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'unique:genres'],
+            'description' => ['required'],
+        ]);
+
+        Genre::create([
+            'name' => $validatedData['name'],
+            'description' => $validatedData['description']
+        ]);
+
+        return redirect('genres');
     }
 
     /**

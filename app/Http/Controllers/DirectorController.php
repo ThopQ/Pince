@@ -14,7 +14,9 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        return view('directors.index');
+        $directors = Director::all();
+
+        return view('directors.index', compact('directors'));
     }
 
     /**
@@ -35,7 +37,15 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'unique:directors']
+        ]);
+
+        Director::create([
+            'name' => $validatedData['name']
+        ]);
+
+        return redirect('directors');
     }
 
     /**

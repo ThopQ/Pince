@@ -14,7 +14,9 @@ class ActorController extends Controller
      */
     public function index()
     {
-        return view('actors.index');
+        $actors = Actor::all();
+
+        return view('actors.index', compact('actors'));
     }
 
     /**
@@ -35,7 +37,15 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'unique:actors']
+        ]);
+
+        Actor::create([
+            'name' => $validatedData['name']
+        ]);
+
+        return redirect('actors');
     }
 
     /**
