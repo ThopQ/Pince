@@ -11,19 +11,20 @@
         <h1 class="font-weight-bold">Alle Genres</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/genres/create" role="button">NEU</a>
+        <a class="btn btn-primary" href="/genres/create" role="button">Neu</a>
     </div>
 </div>
 
+@foreach ($genres as $genre)
 <div class="card mb-4">
     <div class="card-body">
-        <h5 class="card-title mb-4">Thriller</h5>
+        <h5 class="card-title mb-4">{{ $genre->name }}</h5>
 
         <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
+            {{ $genre->description }}
         </p>
     </div>
 </div>
+@endforeach
 
 @endsection
