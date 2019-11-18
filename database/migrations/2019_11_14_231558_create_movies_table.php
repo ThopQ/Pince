@@ -18,7 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('year');
-            $table->enum('fsk', ['0', '6', '12', '16', '18+']);
+            $table->enum('fsk', [0, 6, 12, 16, 18]);
             $table->bigInteger('director_id');
             $table->timestamps();
         });
