@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 {{-- Title name --}}
-@section('title', 'Add Actor')
+@section('title', 'Add actor')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col">
-            <h1 class="font-weight-bold">Add Actor</h1>
+            <h1 class="font-weight-bold">Add actor</h1>
         </div>
         <div class="col text-right">
             <button type="submit" class="btn btn-primary">Save</button>
