@@ -16,9 +16,10 @@ class CreateMoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
-            $table->string('year');
-            $table->enum('fsk', [0, 6, 12, 16, 18]);
+            $table->text('description');
+            $table->year('year');
+            $table->integer('fsk');
+            $table->string('image_url');
             $table->bigInteger('director_id');
             $table->timestamps();
         });
