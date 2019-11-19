@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/movies');
 });
+
+Route::resources([
+    'movies' => 'MovieController',
+    'directors' => 'DirectorController',
+    'actors' => 'ActorController',
+    'genres' => 'GenreController'
+]);
