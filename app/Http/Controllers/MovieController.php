@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use App\Director;
+use App\Actor;
+use App\Genre;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Validation\Rule;
 
 class MovieController extends Controller
 {
@@ -14,7 +20,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return view('movies.index');
+        $movies = Movie::all();
+        return view('movies.index', compact('movies'));
     }
 
     /**
@@ -24,7 +31,11 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('movies.create');
+        $directors = Director::all();
+        $actors = Actor::all();
+        $genres = Genre::all();
+
+        return view('movies.create', compact('directors', 'actors', 'genres'));
     }
 
     /**
@@ -35,7 +46,37 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'unique:genres'],
+            'description' => ['required'],
+            'year' => ['required'],
+            'fsk' => [
+                'required',
+                Rule::in([0, 6, 12, 16, 18]),
+            ],
+            'director_id' => ['exists:directors,id'],
+            'actors' => ['exists:actors,id'],
+            'genres' => ['exists:genres,id'],
+            'image_url' => ['url']
+        ]);
+
+        Movie::create([
+            'name' => $validatedData['name'],
+            'description' => $validatedData['description'],
+            'year' => $validatedData['year'],
+            'fsk' => $validatedData['fsk'],
+            'director_id' => $validatedData['director_id'],
+            'image_url' => $validatedData['image_url']
+        ]);
+
+        $movie = Movie::latest()->first();
+        $actors = $request->actor;
+        $genres = $request->genre;
+
+        $this->attachActors($movie, $actors);
+        $this->attachGenres($movie, $genres);
+
+        return redirect('movies');
     }
 
     /**
@@ -81,5 +122,29 @@ class MovieController extends Controller
     public function destroy(Movie $movie)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function attachActors($movie, $actors)
+    {
+        foreach ($actors as $actor) {
+            $movie->actors()->attach($actor);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function attachGenres($movie, $genres)
+    {
+        foreach ($genres as $genre) {
+            $movie->genres()->attach($genre);
+        }
     }
 }
