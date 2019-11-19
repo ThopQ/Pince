@@ -15,16 +15,18 @@
     </div>
 </div>
 
-@foreach ($genres as $genre)
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title mb-4">{{ $genre->name }}</h5>
+<div class="card-columns">
+    @foreach ($genres as $genre)
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title mb-4">{{ $genre->name }}</h5>
 
-        <p class="card-text">
-            {{ $genre->description }}
-        </p>
+            <p class="card-text">
+                {{ $genre->description }}
+            </p>
+        </div>
     </div>
+    @endforeach
 </div>
-@endforeach
 
 @endsection
