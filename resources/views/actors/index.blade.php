@@ -15,12 +15,14 @@
     </div>
 </div>
 
-@foreach ($actors as $actor)
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">{{ $actor->name }}</h5>
+<div class="card-columns">
+    @foreach ($actors as $actor)
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ $actor->name }}</h5>
+        </div>
     </div>
+    @endforeach
 </div>
-@endforeach
 
 @endsection

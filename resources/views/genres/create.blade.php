@@ -38,8 +38,8 @@
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description"
-                    placeholder="Ein lustiger Film" required>
+                <textarea class="form-control" id="description" name="description" placeholder="Ein lustiger Film"
+                    required rows="3"></textarea>
             </div>
         </div>
     </div>

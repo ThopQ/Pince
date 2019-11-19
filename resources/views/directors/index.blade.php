@@ -15,12 +15,14 @@
     </div>
 </div>
 
-@foreach ($directors as $director)
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">{{ $director->name }}</h5>
+<div class="card-columns">
+    @foreach ($directors as $director)
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ $director->name }}</h5>
+        </div>
     </div>
+    @endforeach
 </div>
-@endforeach
 
 @endsection
