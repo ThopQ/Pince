@@ -2,31 +2,61 @@
 @extends('layouts.master')
 
 {{-- Title name --}}
-@section('title', 'Filme')
+@section('title', 'Movies')
 
 @section('content')
 
 <div class="row">
     <div class="col">
-        <h1 class="font-weight-bold">Alle Filme</h1>
+        <h1 class="font-weight-bold">All movies</h1>
     </div>
     <div class="col text-right">
-        <a class="btn btn-primary" href="/movies/create" role="button">NEU</a>
+        <a class="btn btn-primary" href="/movies/create" role="button">Create</a>
     </div>
 </div>
 
+@foreach ($movies as $movie)
 <div class="card mb-4">
     <div class="card-body">
-        <h5 class="card-title"><span class="font-weight-bold">Interstellar</span> (2019)</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Directed by Christopher Nolan</h6>
-        <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-        </p>
         <div class="row">
-            <div class="col-md-6">Actors: Blablabla, Blablabla</div>
-            <div class="col-md-6">Genres: Drama, Sci-Fi</div>
+            <div class="col-md-2">
+                @if ($movie->image_url)
+                <img src="{{ $movie->image_url }}" class="img-fluid" alt="{{ $movie->name }}_image">
+                @else
+                <p class="text-danger font-weight-bold">No image</p>
+                @endif
+            </div>
+            <div class="col-md-10">
+                <h5 class="card-title"><span class="font-weight-bold">{{ $movie->name }}</span> ({{ $movie->year }})
+                </h5>
+                <h6 class="card-subtitle mb-4 text-muted">Directed by {{ $movie->director->name }}</h6>
+                <p class="card-text mb-2">
+                    {{ $movie->description }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="row">
+            <div class="col">
+                Actors:
+                @foreach ($movie->actors as $actor)
+                <span class="badge badge-secondary">{{ $actor->name }}</span>
+                @endforeach
+            </div>
+            <div class="col">
+                Genres:
+                @foreach ($movie->genres as $genre)
+                <span class="badge badge-secondary">{{ $genre->name }}</span>
+                @endforeach
+
+            </div>
         </div>
     </div>
 </div>
+@endforeach
+
+
+
+
 @endsection
