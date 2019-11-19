@@ -1,6 +1,6 @@
 # Pince
 
-Pince lets you easily store and manage your movie collection.
+Pince lets you easily store and manage your movie collection. Just like Mme Pince manages the Hogwars library :)
 
 ## Why Pince
 
