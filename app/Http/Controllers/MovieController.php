@@ -20,7 +20,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::all()->sortBy('name');
         return view('movies.index', compact('movies'));
     }
 
@@ -31,9 +31,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-        $directors = Director::all();
-        $actors = Actor::all();
-        $genres = Genre::all();
+        $directors = Director::all()->sortBy('name');
+        $actors = Actor::all()->sortBy('name');
+        $genres = Genre::all()->sortBy('name');
 
         return view('movies.create', compact('directors', 'actors', 'genres'));
     }
