@@ -50,14 +50,12 @@ class MovieController extends Controller
             'name' => ['required', 'unique:genres'],
             'description' => ['required'],
             'year' => ['required'],
-            'fsk' => [
-                'required',
-                Rule::in([0, 6, 12, 16, 18]),
-            ],
+            'fsk' => ['required', Rule::in([0, 6, 12, 16, 18])],
             'director_id' => ['exists:directors,id'],
             'actors' => ['exists:actors,id'],
             'genres' => ['exists:genres,id'],
-            'image_url' => ['url']
+            'image_url' => ['url'],
+            'steelbook' => ['boolean']
         ]);
 
         Movie::create([
@@ -66,7 +64,8 @@ class MovieController extends Controller
             'year' => $validatedData['year'],
             'fsk' => $validatedData['fsk'],
             'director_id' => $validatedData['director_id'],
-            'image_url' => $validatedData['image_url']
+            'image_url' => $validatedData['image_url'],
+            'steelbook' => $validatedData['steelbook']
         ]);
 
         $movie = Movie::latest()->first();
