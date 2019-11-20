@@ -14,7 +14,7 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        $directors = Director::all();
+        $directors = Director::all()->sortBy('name');
 
         return view('directors.index', compact('directors'));
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     //Fillable attributes stored in array
-    protected $fillable = ['name', 'description', 'year', 'fsk', 'image_url', 'director_id'];
+    protected $fillable = ['name', 'description', 'year', 'fsk', 'image_url', 'steelbook', 'director_id'];
 
     public function director()
     {

@@ -14,7 +14,7 @@ class ActorController extends Controller
      */
     public function index()
     {
-        $actors = Actor::all();
+        $actors = Actor::all()->sortBy('name');
 
         return view('actors.index', compact('actors'));
     }

@@ -85,12 +85,18 @@
             </div>
 
             <div class="row">
-                <div class="col">
+                <div class="col-md-10">
                     <div class="form-group">
                         <label for="image_url">Cover-Image</label>
                         <input type="url" class="form-control" id="image_url" name="image_url"
                             aria-describedby="urlHelp" placeholder="https://www.website.com/image">
                         <small id="urlHelp" class="form-text text-muted">Optional</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="custom-control custom-switch pt-5">
+                        <input type="checkbox" class="custom-control-input" id="steelbook" name="steelbook">
+                        <label class="custom-control-label" for="steelbook" name="steelbook">Steelbook</label>
                     </div>
                 </div>
             </div>

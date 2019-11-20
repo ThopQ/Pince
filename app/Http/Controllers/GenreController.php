@@ -14,7 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = Genre::all();
+        $genres = Genre::all()->sortBy('name');
 
         return view('genres.index', compact('genres'));
     }
