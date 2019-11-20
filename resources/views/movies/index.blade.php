@@ -17,7 +17,7 @@
 
 @foreach ($movies as $movie)
 <div class="card mb-4">
-    <div class="card-body">
+    <div class="card-body {{ $movie->steelbook == 1 ? 'steelbook' : '' }}">
         <div class="row">
             <div class="col-md-2">
                 @if ($movie->image_url)
