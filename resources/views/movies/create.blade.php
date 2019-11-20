@@ -29,7 +29,7 @@
     @endforeach
     @endif
 
-    <div class="card pt-2 pb-2">
+    <div class="card pt-2 pb-2 mb-5">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-10">
@@ -95,8 +95,9 @@
                 </div>
                 <div class="col-md-2">
                     <div class="custom-control custom-switch pt-5">
-                        <input type="checkbox" class="custom-control-input" id="steelbook" name="steelbook">
-                        <label class="custom-control-label" for="steelbook" name="steelbook">Steelbook</label>
+                        <input type="hidden" class="custom-control-input" name="steelbook" value="0">
+                        <input type="checkbox" class="custom-control-input" id="steelbook" name="steelbook" value="1">
+                        <label class="custom-control-label" for="steelbook">Steelbook</label>
                     </div>
                 </div>
             </div>
