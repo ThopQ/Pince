@@ -29,7 +29,9 @@
             <div class="col-md-10">
                 <h5 class="card-title"><span class="font-weight-bold">{{ $movie->name }}</span> ({{ $movie->year }})
                 </h5>
-                <h6 class="card-subtitle mb-4 text-muted">Directed by {{ $movie->director->name }}</h6>
+                <h6 class="card-subtitle mb-4 text-muted">FSK: {{ $movie->fsk }} | Directed by
+                    {{ $movie->director->name }}
+                </h6>
                 <p class="card-text mb-2">
                     {{ $movie->description }}
                 </p>
@@ -38,13 +40,13 @@
     </div>
     <div class="card-footer text-muted">
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 Actors:
                 @foreach ($movie->actors as $actor)
                 <span class="badge badge-secondary">{{ $actor->name }}</span>
                 @endforeach
             </div>
-            <div class="col">
+            <div class="col-md-6">
                 Genres:
                 @foreach ($movie->genres as $genre)
                 <span class="badge badge-secondary">{{ $genre->name }}</span>
@@ -55,8 +57,5 @@
     </div>
 </div>
 @endforeach
-
-
-
 
 @endsection
