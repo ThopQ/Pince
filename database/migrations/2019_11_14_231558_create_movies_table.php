@@ -20,6 +20,7 @@ class CreateMoviesTable extends Migration
             $table->year('year');
             $table->integer('fsk');
             $table->string('image_url');
+            $table->boolean('steelbook');
             $table->bigInteger('director_id');
             $table->timestamps();
         });
