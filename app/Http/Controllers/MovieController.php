@@ -20,7 +20,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all()->sortBy('name');
+        $movies = Movie::orderBy('name')->paginate(6);
         return view('movies.index', compact('movies'));
     }
 
