@@ -15,6 +15,11 @@
         .sticky-top {
             top: 1em;
         }
+
+        .steelbook {
+            background-color: #e7eff9;
+            background-image: linear-gradient(90deg, #e7eff9 0%, #cfd6e6 74%);
+        }
     </style>
 </head>
 

@@ -54,8 +54,8 @@ class MovieController extends Controller
             'director_id' => ['exists:directors,id'],
             'actors' => ['exists:actors,id'],
             'genres' => ['exists:genres,id'],
-            'image_url' => ['url'],
-            'steelbook' => ['boolean']
+            'image_url' => ['nullable', 'url'],
+            'steelbook' => ['required']
         ]);
 
         Movie::create([
