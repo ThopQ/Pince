@@ -25,4 +25,6 @@
     @endforeach
 </div>
 
+{{ $directors->links() }}
+
 @endsection
