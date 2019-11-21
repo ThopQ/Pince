@@ -29,4 +29,6 @@
     @endforeach
 </div>
 
+{{ $genres->links() }}
+
 @endsection

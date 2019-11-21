@@ -25,4 +25,6 @@
     @endforeach
 </div>
 
+{{ $actors->links() }}
+
 @endsection
